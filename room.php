@@ -144,7 +144,13 @@ if($result->num_rows > 0){
                                     <div class="flat-item-info">
                                         <div class="flat-title-price">
                                             <h5><a href="properties-details.html"><?php echo $app['location']; ?></a></h5>
-                                            <span class="price">Rs. <?php echo $app['price']; ?></span>
+                                            <span class="price"><?php
+                                            $price = $app['price']; 
+                                            require_once "admin/class/currency.class.php";
+                                            $currency = new Currency();
+                                            $x=$currency->numberToCurrency($price);
+                                            print_r($x);
+                                             ?></span>
                                         </div>
                                         <div>
                                             <p>Expiry Date: <?php echo $app['expiry_date'] ;
