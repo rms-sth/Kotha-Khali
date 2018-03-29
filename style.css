@@ -189,15 +189,15 @@
     border: medium none;
     box-shadow: none;
     color: #a8a8a8;
-    float: left;
+    float: right;
     font-size: 14px;
     font-weight: 300;
     height: 20px;
     line-height: 20px;
     margin-bottom: 5px;
-    padding: 0;
+    padding: ;
     text-align: left;
-    width: 50%;
+    width: 71%;
 }
 .price_slider_amount > input:first-child {
     padding-right: 5px;

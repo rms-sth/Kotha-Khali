@@ -14,8 +14,8 @@
                                             <img src="images/icons/location-2.png" alt="">
                                         </div>
                                         <div class="address-info">
-                                            <span>8901 Marmora Raod,</span>
-                                            <span>Glasgow, D04  89GR</span>
+                                            <span>Patan Dhoka,</span>
+                                            <span>Lalitpur, Nepal</span>
                                         </div>
                                     </li>
                                     <li>
@@ -23,8 +23,8 @@
                                             <img src="images/icons/phone-3.png" alt="">
                                         </div>
                                         <div class="address-info">
-                                            <span>Telephone : (801) 4256  9856</span>
-                                            <span>Telephone : (801) 4256  9658</span>
+                                            <span>Telephone : (+977) 9860-2985-34</span>
+                                            <span>Mobile No : (+977) 9860-2985-34</span>
                                         </div>
                                     </li>
                                     <li>
@@ -32,8 +32,8 @@
                                             <img src="images/icons/world.png" alt="">
                                         </div>
                                         <div class="address-info">
-                                            <span>Email : info@sheltek.com</span>
-                                            <span>Web :<a href="#" target="_blank"> www.sheltek.com</a></span>
+                                            <span>Email : ramesrest@gmail.com</span>
+                                            <span>Web :<a href="#" target="_blank"> www.khalikotha.com</a></span>
                                         </div>
                                     </li>
                                 </ul>
@@ -46,7 +46,7 @@
                                 <ul class="footer-latest-news">
                                     <li>
                                         <div class="latest-news-image">
-                                            <a href="single-blog.html"><img src="images/blog/1.jpg" alt=""></a>
+                                            <a href="single-blog.html"><img src="images/room_images/1.jpg" alt=""></a>
                                         </div>
                                         <div class="latest-news-info">
                                             <h6><a href="single-blog.html">Beautiful Home</a></h6>
@@ -55,7 +55,7 @@
                                     </li>
                                     <li>
                                         <div class="latest-news-image">
-                                            <a href="single-blog.html"><img src="images/blog/2.jpg" alt=""></a>
+                                             <a href="single-blog.html"><img src="images/room_images/2.jpg" alt=""></a>
                                         </div>
                                         <div class="latest-news-info">
                                             <h6><a href="single-blog.html">Beautiful Home</a></h6>
@@ -64,7 +64,7 @@
                                     </li>
                                     <li>
                                         <div class="latest-news-image">
-                                            <a href="single-blog.html"><img src="images/blog/3.jpg" alt=""></a>
+                                             <a href="single-blog.html"><img src="images/room_images/3.jpg" alt=""></a>
                                         </div>
                                         <div class="latest-news-info">
                                             <h6><a href="single-blog.html">Beautiful Home</a></h6>
@@ -97,7 +97,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="copyright text-center">
-                                <p>Copyright &copy; 2016 <a href="https://themeforest.net/user/devitems/portfolio"><b>Devitems</b></a>. All rights reserved.</p>
+                                <p>Copyright &copy; 2018 <a href="#"><b>Khali Kotha</b></a>. All rights reserved.</p>
                             </div>
                         </div>
                     </div>

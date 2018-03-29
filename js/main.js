@@ -81,15 +81,15 @@
     ******************************************** */
     $( "#slider-range" ).slider({
         range: true,
-        min: 20,
-        max: 2500,
-        values: [ 80, 2000 ],
+        min: 1000,
+        max: 120000,
+        values: [ 80, 60000 ],
         slide: function( event, ui ) {
-            $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+            $( "#amount" ).val( "रु " + ui.values[ 0 ] + " - रु " + ui.values[ 1 ] );
         }
     });
-    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-    " - $" + $( "#slider-range" ).slider( "values", 1 ) ); 
+    $( "#amount" ).val( "रु " + $( "#slider-range" ).slider( "values", 0 ) +
+    " - रु " + $( "#slider-range" ).slider( "values", 1 ) ); 
 
     /*************************
         6. tooltip

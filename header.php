@@ -62,8 +62,8 @@
                                         <img src="images/icons/phone.png" alt="">
                                     </div>
                                     <div class="header-info">
-                                        <h6>+88 (012) 564 979 56</h6>
-                                        <p>We are open 9 am - 10pm</p>
+                                        <h6>+977-9860-2985-34</h6>
+                                        <p>Services for users</p>
                                     </div>
                                 </div>
                                 <div class="company-info-item">
@@ -71,7 +71,7 @@
                                         <img src="images/icons/mail-open.png" alt="">
                                     </div>
                                     <div class="header-info">
-                                        <h6><a href="mailto:hnasir770@gmail.com">info@sheltek.com</a></h6>
+                                        <h6><a href="mailto:ramesrest@gmail.com">ramesrest@gmail.com</a></h6>
                                         <p>You can mail us</p>
                                     </div>
                                 </div>
@@ -256,8 +256,8 @@
                                                     <div class="shop-filter">
                                                         <div class="price_filter">
                                                             <div class="price_slider_amount">
-                                                                <input type="submit"  value="You range :"/> 
-                                                                <input type="text" id="amount" name="price"  placeholder="Add Your Price" /> 
+                                                                <span style="font-size: 21px; color: #a8a8a8">Price : </span>
+                                                                <input type="button" id="amount" name="price"/> 
                                                             </div>
                                                             <div id="slider-range"></div>
                                                         </div>
