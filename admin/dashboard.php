@@ -11,6 +11,12 @@ require_once "header.php" ?>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
+            <?php 
+            if(isset($_SESSION['message_login'])) { 
+                echo "<div class = 'alert alert-success'>" .$_SESSION['message_login'] ."</div>"; 
+            } 
+            unset($_SESSION['message_login']);
+            ?>
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->

@@ -1,29 +1,31 @@
 <?php
-require_once "admin/class/common.php";
-require_once "admin/class/config.php";
+require_once "class/common.php";
+require_once "class/config.php";
 class User extends Common{
 	public $id, $name, $username, $email, $password, $status;
 
 	public function login()
 	{
 		$this->password = md5($this->password);
-		$sql = "SELECT * FROM tbl_user WHERE email = '$this->email' and password='$this->password' ";
-		$conn = new mysqli('localhost','root','','db_hospital');
+		$sql = "SELECT * FROM tbl_user WHERE (username = '$this->username' || email = '$this->email') and password='$this->password' ";
+		$conn = new mysqli('localhost','root','','db_khali');
 		
 		if($conn->connect_errno != 0){
 			die("Database Connection error!!");
 		}
 		$res = $conn->query($sql);
-		
+		// print_r($res);
 		if($res->num_rows == 1 ){
 			$data = $res->fetch_assoc();
-			//print_r($data);	
 			@session_start();
-			$_SESSION['email'] = $this->email;
+			// print_r($data);
+			//$_SESSION['email'] = $this->email;
 			$_SESSION['name'] = $data['name'];
 			$_SESSION['username'] = $data['username'];
+			$_SESSION['email'] = $data['email'];
 			$_SESSION['message_login'] = 'Welcome, ' .$data['name']. '!! You are successfully logged in!!';
-			//header('location:dashboard.php');
+			// header('location:dashboard.php');
+			redirect('dashboard.php');
 		}else{
 			return false;
 		}

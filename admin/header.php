@@ -1,7 +1,11 @@
 <?php
 session_start();
 require_once "class/config.php";
-
+if(!isset($_SESSION['username'])){
+    $_SESSION['error_message'] = "You must login to access dashboard!!";
+    // header('location:index.php');
+    redirect('index.php');
+}
 ?>
 
 
@@ -56,7 +60,7 @@ require_once "class/config.php";
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Admin Panel</a>
+                <a class="navbar-brand" href="index.php">Admin Panel</a>
             </div>
             <!-- /.navbar-header -->
 
