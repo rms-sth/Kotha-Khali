@@ -1,13 +1,17 @@
 <?php 
 $title = "Kotha khali";
-require_once "header.php"; ?>
-            
-            <!-- ABOUT SHELTEK AREA START -->
+require_once "header.php"; 
+if(isset($_SESSION['message_login'])) { 
+    echo "<div class = 'alert alert-success'>" .$_SESSION['message_login'] ."</div>"; 
+} 
+unset($_SESSION['message_login']);
+?>
+        <!-- ABOUT SHELTEK AREA START -->
             <div class="about-sheltek-area ptb-115">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6 col-xs-12">
-                            <div class="section-title mb-30">
+                            <div class="section-title mb-30"> 
                                 <h3>SOME WORD </h3>
                                 <h2>ABOUT SHELTEK</h2>
                             </div>

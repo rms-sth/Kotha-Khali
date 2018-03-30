@@ -1,11 +1,36 @@
+<?php  
+session_start();
+require_once "register.class.php";
+if (isset($_POST['btnLogin'])) {
+    if (isset($_POST['username']) && !empty($_POST['username'])) {
+        $username = $_POST['username'];
+    }else{
+        $errUsername = "Please enter the username";
+    }
+    if (isset($_POST['password']) && !empty($_POST['password'])) {
+        $password = $_POST['password'];
+    }else{
+        $errPassword = "Please enter the password";
+    }
+    if(isset($username) && isset($password)){
+        $user = new User();
+        $user->username = $username;
+        $user->password = $password;
+        $status = $user->login();
+        if (isset($_POST['remember'])) {
+                    setcookie('username',$username,(time()+7*24*60*60));
+                    setcookie('message_login',$_SESSION['message_login'],(time()+7*24*60*60));       
+        }
+    }  
+}
+?>
 
 <!doctype html>
 <html class="no-js" lang="zxx">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title><?php echo $title; ?> </title>
+    <title><?php echo "$title";?></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -103,13 +128,21 @@
                                 <nav id="primary-menu">
                                     <ul class="main-menu text-center">
                                         <li><a href="index.php"><img src="images/home.png" alt="" width="27px" height="27px"> Home</a></li>
+                                       
                                         <li><a href="room.php">Room</a></li>
                                         <li><a href="flat.php">Flat</a></li>
                                         <li><a href="contact.php">Contact Us</a></li>
-                                        <li><a href="about.php">About Us</a></li>
+                                        <!-- <li><a href="about.php">About Us</a></li> -->
                                         <li><a href="service.php">Service</a></li>
+                                         
+                                        <?php if (!isset($_COOKIE['username'])) { ?>
                                         <li><a href="login.php"><img src="images/login2.png" alt="" width="27px" height="27px">Login</a></li>
-                                        <li ><a href="register.php"><img src="images/register.png" alt="" width="27px" height="27px">Register</a></li>  
+                                        <?php }?>
+                                        <li ><a href="register.php"><img src="images/register.png" alt="" width="27px" height="27px">Register</a></li>
+                                        <?php if (isset($_COOKIE['username'])) { ?>
+                                           <li ><a href="#"><img src="images/add.png" alt="" width="35px" height="35px"> Post Ads</a></li>  
+                                        <?php }?>
+                                        
                                     </ul>
                                 </nav>
                             </div>
@@ -278,6 +311,7 @@
                 </div>
             </div>
             <!-- FIND HOME AREA END -->
+
 
 
  

@@ -1,6 +1,13 @@
 <?php
 $title = "Login Form";
-require_once "header.php"; ?>
+require_once "header.php";
+if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])){
+    redirect('index.php');
+}
+$_SESSION['error_message'] = "After login you can post rental ads!!";
+
+
+?>
 
         <!-- BREADCRUMBS AREA START -->
         <div class="breadcrumbs-area bread-bg-1 bg-opacity-black-70">
@@ -30,13 +37,26 @@ require_once "header.php"; ?>
                         <div class="col-md-offset-3 col-md-8 col-xs-12">
                             <div class="registered-customers mb-50">
                                 <h5 class="mb-50">LOGIN</h5>
-                                <form action="#">
+                                <form action="" method="post" id="login">
                                     <div class="login-account p-30 box-shadow">
-                                        <p>If you have an account with us, Please log in.</p>
-                                        <input type="text" name="name" placeholder="Email Address">
+                                         <?php if(isset($status) && $status == false){
+                                            echo "<div class = 'alert alert-danger'>" ."Invalid Login Information!!" ."</div>";
+                                        } ?>
+                                        <?php 
+                                        @session_start();
+                                        if(isset($_SESSION['error_message']) && !empty($_SESSION['error_message'])){
+                                            echo "<div class = 'alert alert-success'>" .$_SESSION['error_message'] ."</div>";
+                                            unset($_SESSION['error_message']);
+                                        
+                                        } ?>
+                                        
+                                        <?php if(isset($errUsername)){ echo "<p style='color:red'>$errUsername</p>";} ?>
+                                        <input type="text" name="username" placeholder="Username">
+                                        <?php if(isset($errPassword)){ echo "<p style='color:red'>$errPassword</p>";} ?>
                                         <input type="password" name="password" placeholder="Password">
                                         <p><small><a href="#">Forgot our password?</a></small></p>
-                                        <button class="submit-btn-1" type="submit">login</button>
+                                        <input name="remember" type="checkbox" value="Remember Me" name="remember"> Remember Me<br><br>
+                                        <button class="submit-btn-1" type="submit" name = "btnLogin">login</button>
                                     </div>
                                 </form>
                             </div>

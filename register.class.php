@@ -6,24 +6,26 @@ class User extends Common{
 
 	public function login()
 	{
-		$this->password = md5($this->password);
-		$sql = "SELECT * FROM tbl_user WHERE email = '$this->email' and password='$this->password' ";
-		$conn = new mysqli('localhost','root','','db_hospital');
-		
+		$this->password = $this->password;
+		$sql = "SELECT * FROM tbl_register WHERE username = '$this->username' and password='$this->password' ";
+		$conn = new mysqli('localhost','root','','db_khali');
+		//print_r($conn);
 		if($conn->connect_errno != 0){
 			die("Database Connection error!!");
 		}
 		$res = $conn->query($sql);
-		
+		//print_r($res);
 		if($res->num_rows == 1 ){
 			$data = $res->fetch_assoc();
 			//print_r($data);	
 			@session_start();
-			$_SESSION['email'] = $this->email;
-			$_SESSION['name'] = $data['name'];
+			//$_SESSION['email'] = $this->email;
 			$_SESSION['username'] = $data['username'];
-			$_SESSION['message_login'] = 'Welcome, ' .$data['name']. '!! You are successfully logged in!!';
-			//header('location:dashboard.php');
+			$_SESSION['first_name'] = $data['first_name'];
+			$_SESSION['middle_name'] = $data['middle_name'];
+			$_SESSION['last_name'] = $data['last_name'];
+			$_SESSION['message_login'] = '<center>Welcome, ' .$data['first_name'] .' ' .$data['middle_name'] .' '.$data['last_name']. '. You are successfully logged in!!! Now you can post your own rental ad. Thank you for joining us!!</center>';
+			redirect('index.php');
 		}else{
 			return false;
 		}
@@ -31,13 +33,13 @@ class User extends Common{
 
 	public function save()
 	{
-		$this->password= md5($this->password);
+		$this->password= $this->password;
 		$sql = "insert into tbl_user (name,username,email,password) values('$this->name', '$this->username', '$this->email', '$this->password') ";
 		$conn = new mysqli('localhost','root','','db_newsportal');
 		$result = $this->insert($sql);
 		if($result){
 			$_SESSION['success_message'] = "User Inserted successfully with $result";
-			redirect('list_user.php');
+			//redirect('list_user.php');
 		}else{
 			return false;
 		}
